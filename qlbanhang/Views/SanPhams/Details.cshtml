@@ -1,17 +1,17 @@
 ﻿@model qlbanhang.Models.SanPham
-
+@using qlbanhang.Models;
 @{
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Chi tiết sản phẩm</h2>
 
 <div>
     <h4>SanPham</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.TenSP)
+            Tên sản phẩm
         </dt>
 
         <dd>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Donvitinh)
+            Đơn vị tính
         </dt>
 
         <dd>
@@ -27,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Dongia)
+            Đơn giá
         </dt>
 
         <dd>
@@ -35,20 +35,22 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.HinhSP)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.HinhSP)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LoaiSP.TenLoaiSP)
+            Loại sản phẩm
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.LoaiSP.TenLoaiSP)
         </dd>
+        <dt>
+            Hình sản phẩm
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.HinhSP)*@
+            @Html.Image("../../"+@Model.HinhSP,@Model.HinhSP,"100")
+        </dd>
+
+
 
     </dl>
 </div>
